@@ -11,10 +11,10 @@ module.exports = {
             console.log(err)
         }
     },
-    createTodo: async(req, res, next) => {
+    createTodo: async(req, res) => {
         try {
-            console.log(req.files)
                 // await Todo.create({todo: req.body.todoItem, completed: false, userId: req.user.id})
+            console.log(req.file)
             console.log('Todo has been added!')
             res.redirect('/todos')
         } catch (err) {

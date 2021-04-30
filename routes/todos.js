@@ -2,7 +2,8 @@ const express = require('express')
 const router = express.Router()
 const todosController = require('../controllers/todos')
 const { ensureAuth, ensureGuest } = require('../middleware/auth')
-const multer = require('multer');
+const multer = require('multer')
+const upload = multer()
 // SET STORAGE
 var storage = multer.diskStorage({
     destination: function(req, file, cb) {
@@ -12,8 +13,6 @@ var storage = multer.diskStorage({
         cb(null, file.fieldname + '-' + Date.now())
     }
 })
-
-const upload = multer({ storage: storage })
 
 router.get('/', ensureAuth, todosController.getTodos)
 
