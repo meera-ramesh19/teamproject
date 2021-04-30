@@ -13,10 +13,11 @@ module.exports = {
     },
     createPost: async(req, res) => {
         try {
-            const imageUrl = await cloudinary.uploader.upload(req.file.path)
-            console.group(imageUrl)
+            const image = await cloudinary.uploader.upload(req.file.path)
+            const imageUrl = image.url
+            // console.group(imageUrl)
             // await Todo.create({todo: req.body.todoItem, completed: false, userId: req.user.id})
-            console.log(req.file)
+            await Post.create({title: req.body.imageTitle, imageUrl:imageUrl, userId:req.user.id})
             console.log('Post has been added!')
             res.redirect('/post')
         } catch (err) {
