@@ -3,7 +3,8 @@ const router = express.Router()
 const todosController = require('../controllers/todos')
 const { ensureAuth, ensureGuest } = require('../middleware/auth')
 const multer = require('multer');
-// SET STORAGE
+const upload = multer()
+    // SET STORAGE
 var storage = multer.diskStorage({
     destination: function(req, file, cb) {
         cb(null, 'uploads')
@@ -12,9 +13,6 @@ var storage = multer.diskStorage({
         cb(null, file.fieldname + '-' + Date.now())
     }
 })
-
-const upload = multer({ storage: storage })
-
 router.get('/', ensureAuth, todosController.getTodos)
 
 router.post('/createTodo', upload.single('myFile'), todosController.createTodo)

@@ -1,10 +1,116 @@
-h1{
+h1 {
     color: red;
 }
-.completed{
+
+.completed {
     text-decoration: line-through;
     color: gray;
 }
-.not{
+
+.not {
     text-decoration: underline;
+}
+
+
+/* 
+    Google Font 
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap');
+
+/* 
+    CSS 
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.container {
+    width: 100vw;
+    height: 100vh;
+}
+
+.card-1 {
+    padding: 3em 1em;
+    position: relative;
+    width: 60%;
+    height: 80%;
+    left: 20%;
+    top: 10%;
+    border: 3px solid black;
+    border-radius: 15px;
+}
+
+.card-1>div {
+    text-align: center;
+}
+
+.card-1>div:nth-child(2) {
+    padding: 2em 0;
+}
+
+.btn {
+    position: relative;
+    padding: 15px 30px;
+    background: #2F80ED;
+    border-radius: 15px;
+    color: #ffffff;
+}
+
+.sign-up {
+    padding: 2em 5em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sign-up>h1 {
+    padding: 2em;
+    text-align: center;
+}
+
+.col-2 {
+    width: 50%;
+    margin: 0 auto;
+}
+
+.sign-up-form-card {
+    margin: 0;
+    padding: 3em;
+    border: 2px solid #000000;
+    border-radius: 15px;
+}
+
+.sign-up-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.sign-up-form>input {
+    margin: 1em;
+    padding: .5em;
+}
+
+.sign-up-form-card>span>a {
+    color: #2F80ED;
+}
+
+input[type="submit"] {
+    background: #2F80ED;
+    color: #111;
+    max-width: 100px;
+    padding: 8px 10px;
+    box-shadow: none;
+    border-style: none;
+    border-radius: 15px;
+    letter-spacing: 1px;
+    cursor: pointer;
 }
