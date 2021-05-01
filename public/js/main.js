@@ -1,12 +1,27 @@
 const deleteBtn = document.querySelectorAll('.del')
 const editBtn = document.querySelectorAll('.edit')
+const updateBtn = document.querySelectorAll('.updateBtn')
 
 Array.from(deleteBtn).forEach((el) => {
     el.addEventListener('click', deletePost)
 })
 
 Array.from(editBtn).forEach((el) => {
-    el.addEventListener('click', addInputField)
+    el.addEventListener('click', (e) => addInputField(e))
+})
+
+Array.from(updateBtn).forEach((el) => {
+    el.addEventListener('click', (e) => {
+        const id = e.target.getAttribute('data-id');
+        const div = document.querySelector(`#div-${id}`)
+        const inputField = document.querySelector(`#input-${id}`)
+        if (inputField.value) {
+            div.classList.toggle("editDiv")
+            // const response = await fetch('post/updatePost', {
+            // })
+
+        }
+    })
 })
 
 async function deletePost() {
@@ -27,13 +42,13 @@ async function deletePost() {
     }
 }
 
-function addInputField() {
+function addInputField(e) {
     //need to add inputfield to the dom and a submit button
     //onclick(submit) calls editPost function?
-    const input = document.createElement('input')
-    input.className = ""
-    const submit = document.createElement('button')
-    submit.addEventListener('click', () => console.log(input.value))
+    console.log("I'm running or w/e")
+    const id = e.target.getAttribute('data-id')
+    const div = document.querySelector(`#div-${id}`)
+    div.classList.toggle("editDiv")
 
 }
 
