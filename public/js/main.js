@@ -49,10 +49,7 @@ async function editPost() {
                                 title: title
             })
         })
-<<<<<<< HEAD
     } catch (err) {
         console.log(err)
-=======
->>>>>>> upstream/main
     }
 }
