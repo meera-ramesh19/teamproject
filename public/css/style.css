@@ -162,3 +162,9 @@ input[type="submit"] {
     margin: 1em auto;
     width: 100%;
 }
+
+/* feed styles */
+.post-image {
+    height: 400px; 
+    width: 600px;
+}

@@ -5,7 +5,7 @@ Array.from(deleteBtn).forEach((el) => {
     el.addEventListener('click', deletePost)
 })
 
-Array.from(editButton).forEach((el) => {
+Array.from(editBtn).forEach((el) => {
     el.addEventListener('click', addInputField)
 })
 
@@ -49,5 +49,7 @@ async function editPost() {
                                 title: title
             })
         })
+    } catch (err) {
+        console.log(err)
     }
 }
