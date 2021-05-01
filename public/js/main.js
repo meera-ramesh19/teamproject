@@ -28,7 +28,7 @@ async function deletePost() {
 }
 
 function addInputField() {
-    //need top add inputfield to the dom and a submit button
+    //need to add inputfield to the dom and a submit button
     //onclick(submit) calls editPost function?
     const input = document.createElement('input')
     input.className = ""
