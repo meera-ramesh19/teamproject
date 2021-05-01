@@ -1,69 +1,55 @@
 const deleteBtn = document.querySelectorAll('.del')
-const todoItem = document.querySelectorAll('span.not')
-const todoComplete = document.querySelectorAll('span.completed')
+const editBtn = document.querySelectorAll('.edit')
 
-Array.from(deleteBtn).forEach((el)=>{
-    el.addEventListener('click', deleteTodo)
+Array.from(deleteBtn).forEach((el) => {
+    el.addEventListener('click', deletePost)
 })
 
-Array.from(todoItem).forEach((el)=>{
-    el.addEventListener('click', markComplete)
+Array.from(editBtn).forEach((el) => {
+    el.addEventListener('click', addInputField)
 })
 
-Array.from(todoComplete).forEach((el)=>{
-    el.addEventListener('click', markIncomplete)
-})
-
-async function deleteTodo(){
-    const todoId = this.parentNode.dataset.id
-    try{
-        const response = await fetch('todos/deleteTodo', {
+async function deletePost() {
+    const imageId = this.parentNode.dataset.id
+    try {
+        const response = await fetch('post/deletePost', {
             method: 'delete',
-            headers: {'Content-type': 'application/json'},
+            headers: { 'Content-type': 'application/json' },
             body: JSON.stringify({
-                'todoIdFromJSFile': todoId
+                imageId: imageId
             })
         })
         const data = await response.json()
         console.log(data)
         location.reload()
-    }catch(err){
+    } catch (err) {
         console.log(err)
     }
 }
 
-async function markComplete(){
-    const todoId = this.parentNode.dataset.id
-    try{
-        const response = await fetch('todos/markComplete', {
-            method: 'put',
-            headers: {'Content-type': 'application/json'},
-            body: JSON.stringify({
-                'todoIdFromJSFile': todoId
-            })
-        })
-        const data = await response.json()
-        console.log(data)
-        location.reload()
-    }catch(err){
-        console.log(err)
-    }
+function addInputField() {
+    //need top add inputfield to the dom and a submit button
+    //onclick(submit) calls editPost function?
+    const input = document.createElement('input')
+    input.className = ""
+    const submit = document.createElement('button')
+    submit.addEventListener('click', () => console.log(input.value))
+
 }
 
-async function markIncomplete(){
-    const todoId = this.parentNode.dataset.id
-    try{
-        const response = await fetch('todos/markIncomplete', {
-            method: 'put',
-            headers: {'Content-type': 'application/json'},
-            body: JSON.stringify({
-                'todoIdFromJSFile': todoId
+async function editPost() {
+
+    const id = this.parentNode.dataset.id
+    try {
+        const response = await fetch('post/editPost', {
+                    method: 'put',
+                    headers: { 'Content-type': 'application/json' },
+                    body: JSON.stringify({
+                                imageId: imageId,
+                                title: title
             })
         })
-        const data = await response.json()
-        console.log(data)
-        location.reload()
-    }catch(err){
+    } catch (err) {
         console.log(err)
     }
 }
