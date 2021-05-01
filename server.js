@@ -12,7 +12,7 @@ const mainRoutes = require('./routes/main')
     // const todoRoutes = require('./routes/todos')
 const postRoutes = require('./routes/post')
 
-require('dotenv').config({ path: './config/.env' }) 
+require('dotenv').config({ path: './config/.env' })
 
 // Passport config
 require('./config/passport')(passport)
