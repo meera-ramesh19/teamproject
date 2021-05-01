@@ -9,10 +9,10 @@ const logger = require('morgan')
 const connectDB = require('./config/database')
 const authRoutes = require('./routes/auth')
 const mainRoutes = require('./routes/main')
-// const todoRoutes = require('./routes/todos')
+    // const todoRoutes = require('./routes/todos')
 const postRoutes = require('./routes/post')
 
-require('dotenv').config({path: './config/.env'})
+require('dotenv').config({ path: './config/.env' })
 
 // Passport config
 require('./config/passport')(passport)
@@ -24,27 +24,35 @@ app.use(express.static('public'))
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
 app.use(logger('dev'))
-// Sessions
+    // Sessions
 app.use(
     session({
-      secret: 'keyboard cat',
-      resave: false,
-      saveUninitialized: false,
-      store: new MongoStore({ mongooseConnection: mongoose.connection }),
+        secret: 'keyboard cat',
+        resave: false,
+        saveUninitialized: false,
+        store: new MongoStore({ mongooseConnection: mongoose.connection }),
     })
-  )
-  
+)
+
 // Passport middleware
 app.use(passport.initialize())
 app.use(passport.session())
 
 app.use(flash())
-  
+
 app.use('/', mainRoutes)
 app.use('/auth', authRoutes)
+<<<<<<< HEAD
 // app.use('/todos', todoRoutes)
 app.use('/post', postRoutes)
  
 app.listen(process.env.PORT, ()=>{
     console.log('Server is running, you better catch it! art http://localhost:2121')
 })    
+=======
+app.use('/post', postRoutes)
+
+app.listen(process.env.PORT, () => {
+    console.log('Server is running, you better catch it! art http://localhost:2121')
+})
+>>>>>>> upstream/main

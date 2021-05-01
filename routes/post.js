@@ -7,5 +7,6 @@ const upload = require('../middleware/multer')
 router.get('/', ensureAuth, postController.getPosts)
 
 router.post('/createPost', upload.single('myFile'), postController.createPost)
+router.delete('/deletePost', postController.deletePost)
 
 module.exports = router

@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 
+<<<<<<< HEAD
     <head rel="stylesheet" href="css/style.css">
     </head>
 
@@ -36,5 +37,45 @@
 
         <script src="js/main.js"></script>
     </body>
+=======
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <h1>Todos</h1>
+    <ul>
+        <% posts.forEach( el => { %>
+            <li class='todoItem' data-id='<%=el._id%>'>
+                <% if (el.imageUrl) { %>
+                    <img src="<%=el.imageUrl%>" style="height: 400px; width: 600px;">
+                    <% } %>
+
+                        <span><%= el.title%></span>
+                        <span class='del'> Delete </span>
+                        <span class='edit' data-id=<%=el._id%>> Edit </span>
+                        <div class="editDiv" id="div-<%=el._id%>">
+                            <input id="input-<%=el._id%>" placeholder="<%=el.titile%>">
+                            <button class="updateBtn" id='btn-<%=el._id%>' data-id='<%=el._id%>'>Update</button>
+                        </div>
+            </li>
+            <% }) %>
+    </ul>
+
+    <h2>
+        <%= user.userName %>
+    </h2>
+
+    <form action="/post/createPost" enctype="multipart/form-data" method='POST'>
+        <input type="text" name="imageTitle">
+        <input type="file" name='myFile'>
+        <input type="submit">
+    </form>
+
+    <a href="/logout">Logout</a>
+
+    <script src="js/main.js"></script>
+</body>
+>>>>>>> upstream/main
 
 </html>
