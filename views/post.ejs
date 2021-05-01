@@ -15,11 +15,13 @@
         <ul>
             <% posts.forEach( el => { %>
                 <li class='todoItem' data-id='<%=el._id%>'>
-                    <img src="<%=el.imageUrl%>" style="height: 400px; width: 600px;">
-                    <span><%= el.title%></span>
-                    <span class='del'> Delete </span>
+                    <% if (el.imageUrl) { %>
+                        <img src="<%=el.imageUrl%>" style="height: 400px; width: 600px;">
+                        <% } %>
 
-                </li>
+                            <span><%= el.title%></span>
+                            <span class='del'> Delete </span>
+                            <span class='edit'> Edit </span> </li>
                 <% }) %>
         </ul>
 
