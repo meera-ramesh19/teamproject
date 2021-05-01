@@ -42,11 +42,11 @@ async function editPost() {
     const id = this.parentNode.dataset.id
     try {
         const response = await fetch('post/editPost', {
-                    method: 'put',
-                    headers: { 'Content-type': 'application/json' },
-                    body: JSON.stringify({
-                                imageId: imageId,
-                                title: title
+            method: 'put',
+            headers: { 'Content-type': 'application/json' },
+            body: JSON.stringify({
+                imageId: imageId,
+                title: title
             })
         })
     } catch (err) {
