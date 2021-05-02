@@ -16,9 +16,19 @@ Array.from(updateBtn).forEach((el) => {
         const div = document.querySelector(`#div-${id}`)
         const inputField = document.querySelector(`#input-${id}`)
         if (inputField.value) {
-            div.classList.toggle("editDiv")
-            // const response = await fetch('post/updatePost', {
-            // })
+            div.classList.toggle("editDiv");
+            console.log(inputField.value);
+            (async () => {
+                const newTitle = inputField.value
+                const response = await fetch('post/updatePost', {
+                    method: 'put',
+                    headers: {'Content-type': 'application/json'},
+                    body: JSON.stringify({id, newTitle})
+                })
+                const data = await response.json()
+                console.log(data)
+                location.reload();
+            })()
 
         }
     })

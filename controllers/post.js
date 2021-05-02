@@ -32,6 +32,19 @@ module.exports = {
         }
     },
 
+    updatePost: async(req, res) => {
+        try {
+            const id = req.body.id
+            const newTitle = req.body.newTitle
+            console.log(req.body.id, req.body.title)
+            await Post.updateOne({_id:{$eq:id}}, {$set:{title: newTitle}})
+            console.log('Post updated')
+            res.json('Updated it')
+        } catch (err) {
+            console.log(err)
+        }
+    },
+
     deletePost: async(req, res) => {
         console.log(req.body.imageId)
         try {
@@ -41,7 +54,5 @@ module.exports = {
         } catch (err) {
             console.log(err)
         }
-
-
     }
 }
