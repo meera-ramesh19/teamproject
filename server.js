@@ -42,7 +42,6 @@ app.use(flash())
 
 app.use('/', mainRoutes)
 app.use('/auth', authRoutes)
-    // app.use('/todos', todoRoutes)
 app.use('/post', postRoutes)
 
 app.listen(process.env.PORT, () => {
