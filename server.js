@@ -42,17 +42,8 @@ app.use(flash())
 
 app.use('/', mainRoutes)
 app.use('/auth', authRoutes)
-<<<<<<< HEAD
-// app.use('/todos', todoRoutes)
-app.use('/post', postRoutes)
- 
-app.listen(process.env.PORT, ()=>{
-    console.log('Server is running, you better catch it! art http://localhost:2121')
-})    
-=======
 app.use('/post', postRoutes)
 
 app.listen(process.env.PORT, () => {
     console.log('Server is running, you better catch it! art http://localhost:2121')
 })
->>>>>>> upstream/main
