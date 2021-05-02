@@ -164,7 +164,6 @@ input[type="submit"] {
 }
 
 /* feed styles */
-.post-image {
-    height: 400px; 
+.post-image img{ 
     width: 600px;
 }

@@ -9,6 +9,7 @@ Array.from(editBtn).forEach((el) => {
     el.addEventListener('click', addInputField)
 })
 
+
 async function deletePost() {
     const imageId = this.parentNode.dataset.id
     try {

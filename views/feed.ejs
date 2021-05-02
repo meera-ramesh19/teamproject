@@ -2,32 +2,65 @@
 <html lang="en">
 
 <head>
-    <style>
-    .post-image img { 
-        width: 600px;
-    }
-    </style>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Travel Feed</title>
 
-    <link rel="stylesheet" href="../public/css/style.css">
+    <link rel="stylesheet" href="css/style.css">
     </head>
 
     <body>
+        <%
+            const relativeTime = function(postedTime) {
+                if (!postedTime) {
+                    return ''
+                }
+            const currentTime = Date.now()
+            const timeDiff = currentTime - postedTime
+            const seconds = timeDiff / 1000
+            const minutes = seconds / 60
+            const hours = minutes / 60
+            const days = hours / 24 
+            let s = ''
+            if (seconds < 60){
+                if(Math.floor(seconds)>1){
+                    s = 's'
+                }
+                return Math.floor(seconds) + 'second' + s
+            } else if (minutes < 60) {
+                if (Math.floor(minutes)> 1){
+                    s= 's'
+                }
+                return Math.floor(minutes) + 'minute' + s
+            } else if (hours < 24){
+                if ( Math.floor(hours) > 1 ){
+                    s = 's'
+                }
+                return Math.floor(hours) + 'hour' + s
+            } else {
+                if(Math.floor(days)>1){
+                    s = 's'
+                }
+                return Math.floor(days) +'days' + s
+            }
+    }
+        %>
         <h1>Feed</h1>
         <% posts.forEach( el => { %>
+            <% if (el.imageUrl) { %>
             <div class="post-container">
                 <h2> <%= el.title%></h2>
                 <div class="post-image">
                     <img src="<%=el.imageUrl%>">
                 </div>
-                <p> <%= el.postDate%></p>
+                <p> <%= relativeTime(el.postDate) %></p>
             </div>
+            <% } %>
         <% }) %>
 
         <script src="js/main.js"></script>
     </body>
 
 </html>
+
