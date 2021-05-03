@@ -32,14 +32,16 @@
                         <div class="card-body">
                           <h5 class="card-title" style="text-align: center;"><%=post.title%></h5>
                             <div class="row">
-                                <div style="display: flex; justify-content: center; width: 100%;"><i class="fas fa-heart" style="color: tomato; font-size: 30px;"></i></div>
+                                <div style="display: flex; justify-content: center; width: 100%;">
+                                    <i class="fas fa-heart" style="color: tomato; font-size: 30px;" data-id="<%=post._id%>"></i>
+                                    <span style="margin: 0 0 5px 0; color: crimson;"><%=post.likeCount%></span>
+                                </div>
                             </div>
                         </div>
                     </div>
                 <% }) %>
             </div>
     </div>
-
         <script src="js/main.js"></script>
     </body>
 

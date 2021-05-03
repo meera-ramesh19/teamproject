@@ -6,6 +6,7 @@ module.exports = {
         console.log(req.user)
         try {
             const postItems = await Post.find({ userId: req.user.id })
+            console.log(req.user.id)
             res.render('post.ejs', { posts: postItems, user: req.user })
         } catch (err) {
             console.log(err)

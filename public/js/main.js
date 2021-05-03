@@ -2,6 +2,7 @@ const deleteBtn = document.querySelectorAll('.del')
 const editBtn = document.querySelectorAll('.edit')
 const updateBtn = document.querySelectorAll('.updateBtn')
 const likeBtn = document.querySelectorAll('.fas.fa-heart')
+console.log("likebtn", likeBtn)
 
 Array.from(deleteBtn).forEach((el) => {
     el.addEventListener('click', deletePost)
@@ -88,7 +89,7 @@ async function addLike(event) {
     const postId = event.target.getAttribute('data-id')
     console.log(postId)
     try {
-        const respone = await fetch('feed/addLike', {
+        const response = await fetch('feed/addLike', {
             method: 'put',
             headers: {'Content-type' : 'application/json'},
             body: JSON.stringify({
