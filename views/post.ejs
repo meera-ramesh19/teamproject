@@ -12,7 +12,10 @@
 </head>
 
 <body>
-    <h1>Todos</h1>
+    <header>
+        <%- include('/partials/header') ;%>
+    </header>
+    <h1>Update/Delete</h1>
     <ul>
         <% posts.forEach( el => { %>
             <li class='todoItem' data-id='<%=el._id%>'>
