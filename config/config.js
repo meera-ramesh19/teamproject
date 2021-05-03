@@ -1,3 +1,5 @@
+require('dotenv').config({path: __dirname + '/.env'})
+
 exports.creds = {
     identityMetadata: 'https://login.microsoftonline.com/common/v2.0/.well-known/openid-configuration',
 

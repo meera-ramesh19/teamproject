@@ -1,69 +1,80 @@
 const deleteBtn = document.querySelectorAll('.del')
-const todoItem = document.querySelectorAll('span.not')
-const todoComplete = document.querySelectorAll('span.completed')
+const editBtn = document.querySelectorAll('.edit')
+const updateBtn = document.querySelectorAll('.updateBtn')
 
-Array.from(deleteBtn).forEach((el)=>{
-    el.addEventListener('click', deleteTodo)
+Array.from(deleteBtn).forEach((el) => {
+    el.addEventListener('click', deletePost)
 })
 
-Array.from(todoItem).forEach((el)=>{
-    el.addEventListener('click', markComplete)
+Array.from(editBtn).forEach((el) => {
+    el.addEventListener('click', (e) => addInputField(e))
 })
 
-Array.from(todoComplete).forEach((el)=>{
-    el.addEventListener('click', markIncomplete)
+Array.from(updateBtn).forEach((el) => {
+    el.addEventListener('click', (e) => {
+        const id = e.target.getAttribute('data-id');
+        const div = document.querySelector(`#div-${id}`)
+        const inputField = document.querySelector(`#input-${id}`)
+        if (inputField.value) {
+            div.classList.toggle("editDiv");
+            console.log(inputField.value);
+            (async () => {
+                const newTitle = inputField.value
+                const response = await fetch('post/updatePost', {
+                    method: 'put',
+                    headers: {'Content-type': 'application/json'},
+                    body: JSON.stringify({id, newTitle})
+                })
+                const data = await response.json()
+                console.log(data)
+                location.reload();
+            })()
+
+        }
+    })
 })
 
-async function deleteTodo(){
-    const todoId = this.parentNode.dataset.id
-    try{
-        const response = await fetch('todos/deleteTodo', {
+async function deletePost() {
+    const imageId = this.parentNode.dataset.id
+    try {
+        const response = await fetch('post/deletePost', {
             method: 'delete',
-            headers: {'Content-type': 'application/json'},
+            headers: { 'Content-type': 'application/json' },
             body: JSON.stringify({
-                'todoIdFromJSFile': todoId
+                imageId: imageId
             })
         })
         const data = await response.json()
         console.log(data)
         location.reload()
-    }catch(err){
+    } catch (err) {
         console.log(err)
     }
 }
 
-async function markComplete(){
-    const todoId = this.parentNode.dataset.id
-    try{
-        const response = await fetch('todos/markComplete', {
-            method: 'put',
-            headers: {'Content-type': 'application/json'},
-            body: JSON.stringify({
-                'todoIdFromJSFile': todoId
-            })
-        })
-        const data = await response.json()
-        console.log(data)
-        location.reload()
-    }catch(err){
-        console.log(err)
-    }
+function addInputField(e) {
+    //need to add inputfield to the dom and a submit button
+    //onclick(submit) calls editPost function?
+    console.log("I'm running or w/e")
+    const id = e.target.getAttribute('data-id')
+    const div = document.querySelector(`#div-${id}`)
+    div.classList.toggle("editDiv")
+
 }
 
-async function markIncomplete(){
-    const todoId = this.parentNode.dataset.id
-    try{
-        const response = await fetch('todos/markIncomplete', {
+async function editPost() {
+
+    const id = this.parentNode.dataset.id
+    try {
+        const response = await fetch('post/editPost', {
             method: 'put',
-            headers: {'Content-type': 'application/json'},
+            headers: { 'Content-type': 'application/json' },
             body: JSON.stringify({
-                'todoIdFromJSFile': todoId
+                imageId: imageId,
+                title: title
             })
         })
-        const data = await response.json()
-        console.log(data)
-        location.reload()
-    }catch(err){
+    } catch (err) {
         console.log(err)
     }
 }

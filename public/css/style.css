@@ -11,6 +11,14 @@ h1 {
     text-decoration: underline;
 }
 
+.editDiv {
+    display: none
+}
+
+.updateButton {
+    display: block
+}
+
 
 /* 
     Google Font 
@@ -30,6 +38,10 @@ h1 {
 
 html {
     font-family: 'Montserrat', sans-serif;
+}
+
+.isHidden {
+    display: none;
 }
 
 .container {
@@ -113,4 +125,56 @@ input[type="submit"] {
     border-radius: 15px;
     letter-spacing: 1px;
     cursor: pointer;
+}
+
+.login-card {
+    border: 2px solid black;
+    max-width: 50%;
+    height: 70%;
+    padding: 3em;
+    position: relative;
+    left: 28.8%;
+    top: 10%;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.login-card>div {
+    border: 2px solid black;
+    margin-bottom: 1.5em;
+    width: 70%;
+    text-align: center;
+}
+
+@media screen and (max-width: 860px) {
+    .login-card {
+        max-width: 70%;
+        left: 15%;
+    }
+    .login-card>div {
+        width: 85%;
+    }
+}
+
+.login-card form {
+    padding: 1.5em;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.login-card form>input {
+    margin: 1em auto;
+    width: 100%;
+}
+
+
+/* feed styles */
+
+.post-image {
+    height: 400px;
+    width: 600px;
 }
