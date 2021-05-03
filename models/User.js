@@ -1,19 +1,12 @@
 const bcrypt = require('bcrypt')
 const mongoose = require('mongoose')
+const Post = require('./Post')
 
 const UserSchema = new mongoose.Schema({
     userName: { type: String, unique: true },
     email: { type: String, unique: true },
     password: String,
-    // myFriends: {
-    //     type: [Object]
-    // },
-    // myFriendReq: {
-    //     type: [Object]
-    // },
-    // sentFriendReq: {
-    //     type: [Object]
-    // }
+    likedPosts: [Object]
 
 })
 

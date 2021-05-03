@@ -11,6 +11,7 @@ const authRoutes = require('./routes/auth')
 const mainRoutes = require('./routes/main')
     // const todoRoutes = require('./routes/todos')
 const postRoutes = require('./routes/post')
+const feedRoutes = require('./routes/feed')
 
 require('dotenv').config({ path: './config/.env' })
 
@@ -43,6 +44,7 @@ app.use(flash())
 app.use('/', mainRoutes)
 app.use('/auth', authRoutes)
 app.use('/post', postRoutes)
+app.use('/feed', feedRoutes)
 
 app.listen(process.env.PORT, () => {
     console.log('Server is running, you better catch it! art http://localhost:2121')
