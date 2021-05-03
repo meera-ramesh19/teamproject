@@ -1,0 +1,64 @@
+img {
+    max-width: 100%;
+}
+
+.container {
+    margin: 20px auto 0 auto;
+
+}
+
+.post-container {
+    width: 90%;
+    margin: 0 auto 20px auto;
+}
+
+@media screen and (max-witdh:1080px) {
+    .container {
+        width: 800px;
+    }
+}
+
+@media  screen and (max-width: 300px) {
+    .container {
+        width: 250px;
+    }
+}
+
+.row, .col {
+    display: flex;
+}
+
+.col {
+    flex-direction: column;
+}
+
+.row-max {
+    width: 100%;
+}
+.btn {
+    outline: none;
+    border-style: none;
+    border-radius: 0;
+}
+
+.btn:first-child {
+    border-radius: 0 0 0 5px;
+}
+
+.btn:last-child {
+    border-radius: 0 0 5px 0;
+}
+
+.md-3 {
+    width: 33%;
+}
+
+.md-2 {
+    width: 25%;
+}
+
+.image-holder {
+    background-color: cadetblue;
+    border-radius: 10px 10px 0 0;
+    width: 100%;
+}
