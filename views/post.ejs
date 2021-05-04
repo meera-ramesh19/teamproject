@@ -16,6 +16,11 @@
 </head>
 
 <body>
+    <nav class="navbar navbar-dark bg-dark" style="justify-content: flex-end;">
+        <a href="/post" style="margin-right: 10px;">Posts</a>
+        <a href="/feed" style="margin-right: 10px;">Feed</a>
+        <a href="/logout" style="margin-right: 10px;">Logout</a>
+    </nav>
     <div class="container row">
             <% posts.forEach(post => { %>
                 <div class="card col offset-2" style="max-width: 18rem;">

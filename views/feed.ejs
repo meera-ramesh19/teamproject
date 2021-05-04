@@ -2,10 +2,6 @@
 <html lang="en">
 
 <head>
-    <style> /*this needs to be added to CSS*/
-    .post-image img { 
-        width: 600px;
-    }
     </style>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -21,6 +17,46 @@
     </head>
 
     <body>
+        <%
+            const relativeTime = function(postedTime) {
+                if (!postedTime) {
+                    return ''
+                }
+            const currentTime = Date.now()
+            const timeDiff = currentTime - postedTime
+            const seconds = timeDiff / 1000
+            const minutes = seconds / 60
+            const hours = minutes / 60
+            const days = hours / 24 
+            let s = ''
+            if (seconds < 60){
+                if(Math.floor(seconds)>1){
+                    s = ' s'
+                }
+                return Math.floor(seconds) + ' second' + s
+            } else if (minutes < 60) {
+                if (Math.floor(minutes)> 1){
+                    s= 's'
+                }
+                return Math.floor(minutes) + ' minute' + s
+            } else if (hours < 24){
+                if ( Math.floor(hours) > 1 ){
+                    s = 's'
+                }
+                return Math.floor(hours) + ' hour' + s
+            } else {
+                if(Math.floor(days)>1){
+                    s = ' s'
+                }
+                return Math.floor(days) +' days' + s
+            }
+    }
+        %>
+        <nav class="navbar navbar-dark bg-dark" style="justify-content: flex-end;">
+            <a href="/post" style="margin-right: 10px;">Posts</a>
+            <a href="/feed" style="margin-right: 10px;">Feed</a>
+            <a href="/logout" style="margin-right: 10px;">Logout</a>
+        </nav>
         <h1>Feed</h1>
         <div class="container">
             <div class="row">
@@ -31,6 +67,7 @@
                         <% } %>
                         <div class="card-body">
                           <h5 class="card-title" style="text-align: center;"><%=post.title%></h5>
+                          <h6 style="text-align: center;"><%=relativeTime(post.postDate)%></h6>
                             <div class="row">
                                 <div style="display: flex; justify-content: center; width: 100%;">
                                     <i class="fas fa-heart" style="color: tomato; font-size: 30px;" data-id="<%=post._id%>"></i>
