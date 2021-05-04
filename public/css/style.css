@@ -1,16 +1,3 @@
-h1 {
-    color: red;
-}
-
-.completed {
-    text-decoration: line-through;
-    color: gray;
-}
-
-.not {
-    text-decoration: underline;
-}
-
 .editDiv {
     display: none
 }
@@ -142,7 +129,6 @@ input[type="submit"] {
 }
 
 .login-card>div {
-    border: 2px solid black;
     margin-bottom: 1.5em;
     width: 70%;
     text-align: center;
