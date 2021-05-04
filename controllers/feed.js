@@ -5,7 +5,6 @@ module.exports = {
         // res.render('feed.ejs')
         try {
             const postItems = await Post.find().sort({ postDate: "desc" }).lean();
-            console.log(postItems)
             res.render('feed.ejs', { posts: postItems, user: req.user })
         } catch (err) {
             console.log(err)
