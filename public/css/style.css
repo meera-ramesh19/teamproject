@@ -31,28 +31,23 @@ html {
     display: none;
 }
 
-.container {
-    width: 100vw;
-    height: 100vh;
+.container-fluid {
+    min-height: 100vh;
+    background-color: #ddd;
 }
 
 .card-1 {
     padding: 3em 1em;
-    position: relative;
     width: 60%;
-    height: 80%;
+    height: 430px;
     left: 20%;
-    top: 10%;
-    border: 3px solid black;
-    border-radius: 15px;
-}
-
-.card-1>div {
-    text-align: center;
+    top: 70px;
+    box-shadow: 0 30px 60px 0 rgb(0 0 0 / 50%);
+    border-radius: 15px !important;
 }
 
 .card-1>div:nth-child(2) {
-    padding: 2em 0;
+    padding: 1.3em 0;
 }
 
 .btn {
