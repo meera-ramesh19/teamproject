@@ -16,7 +16,7 @@ Our Travel App is built using the MVC Architecture, we have also implemented "au
 
 # Who is this for? 
 
-- It's for beginners & intermediates with little more experience, to help understand the various aspects of building a node app with some complex features
+- It's for beginners & intermediates users with little more experience, to help understand the various aspects of building a node app with some complex features
 
 ---
 
