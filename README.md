@@ -1,6 +1,6 @@
 # Introduction
 
-A Simple ToDo App is built using the MVC Architecture, we have also implemented "authorization" so folx can sign up, customize & personalize the app 
+A Simple Travel Networking App is built using the MVC Architecture, we have also implemented "authorization" so folx can sign up, customize & personalize the app 
 
 ---
 
@@ -16,13 +16,13 @@ A Simple ToDo App is built using the MVC Architecture, we have also implemented 
 
 # Who is this for? 
 
-- It's for beginners & intermediates with little more experience, to help understand the various aspects of building a node app with some complex features
+- It's for beginners & intermediates with little more experience, to help understand the various aspects of building a node networking app with some complex features
 
 ---
 
 # Packages/Dependencies used 
 
-connect-mongo, dotenv, ejs, express, express-session, mongodb, mongoose, morgan, nodemon, passport, passport-local
+connect-mongo, dotenv, ejs, express, express-session, mongodb, mongoose, morgan, nodemon, passport, passport-local, multer, cloudinary
 
 ---
 
@@ -37,6 +37,11 @@ connect-mongo, dotenv, ejs, express, express-session, mongodb, mongoose, morgan,
 - Create a `.env` file and add the following as `key: value` 
   - PORT: 2121 (can be any port example: 3000) 
   - DB_STRING: `your database URI` 
+  - clientID: `your client secret from microsoft azure`
+  - clientSecret: `your client secret for you application`
+  - CLOUD_NAME: `cloud name from cloudinary`
+  - API_KEY: `api key from cloudinary`
+  - API_SECRET: `api secret from cloudinary`
  ---
  
  Have fun testing and improving it! 😎
