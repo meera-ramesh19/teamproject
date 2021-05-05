@@ -32,8 +32,7 @@ html {
 }
 
 .container-fluid {
-    min-height: 100vh;
-    background-color: #ddd;
+    min-height: 100%;
 }
 
 .card-1 {
@@ -42,12 +41,18 @@ html {
     height: 430px;
     left: 20%;
     top: 70px;
+    background-color: #ace1af !important;
+    color: #000;
     box-shadow: 0 30px 60px 0 rgb(0 0 0 / 50%);
     border-radius: 15px !important;
 }
 
 .card-1>div:nth-child(2) {
     padding: 1.3em 0;
+}
+
+.card-1 h1 {
+    font-weight: 600;
 }
 
 .btn {
