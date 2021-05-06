@@ -1,6 +1,6 @@
 # Introduction
 
-Our Travel App is built using the MVC Architecture, we have also implemented "authorization" so folx can sign up, customize & personalize the app 
+Our Travel App ✈️ is built using the MVC Architecture, we have also implemented "authorization" so folx can sign up, customize & personalize the app 
 
 ---
 
@@ -16,13 +16,13 @@ Our Travel App is built using the MVC Architecture, we have also implemented "au
 
 # Who is this for? 
 
-- It's for beginners & intermediates users with little more experience, to help understand the various aspects of building a node app with some complex features
+- It's for beginners 👵 & intermediates 🙋‍♂️ users with little more experience, to help understand the various aspects of building a node app with some complex features
 
 ---
 
 # Packages/Dependencies used 
 
-connect-mongo, dotenv, ejs, express, express-session, mongodb, mongoose, morgan, nodemon, passport, passport-local
+cloudinary, connect-mongo, dotenv, ejs, express, express flash, express-session, fs-extra, mongodb, mongoose, morgan, multer, nodemon, passport, passport-azure-ad, passport-local
 
 ---
 
