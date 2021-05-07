@@ -25,7 +25,12 @@ module.exports = {
 
             // console.group(imageUrl)
             // await Todo.create({todo: req.body.todoItem, completed: false, userId: req.user.id})
-            await Post.create({ title: req.body.imageTitle, imageUrl: imageUrl, userId: req.user.id })
+            await Post.create({
+                title: req.body.imageTitle,
+                imageUrl: imageUrl,
+                userId: req.user.id, 
+                postDate:Date.now() 
+            })
             console.log('Post has been added!')
             res.redirect('/post')
         } catch (err) {

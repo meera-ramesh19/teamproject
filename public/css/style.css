@@ -2,6 +2,11 @@ h1 {
     color: red;
 }
 
+h6{
+    color:lightgray;
+    font-style: italic;
+}
+
 .completed {
     text-decoration: line-through;
     color: gray;
