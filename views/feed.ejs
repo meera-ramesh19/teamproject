@@ -2,11 +2,6 @@
 <html lang="en">
 
 <head>
-    <style> /*this needs to be added to CSS*/
-    .post-image img { 
-        width: 600px;
-    }
-    </style>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -44,10 +39,10 @@
                 }
                 return Math.floor(hours) + 'hour' + s
             } else {
-                if(Math.floor(days)>1){
+                if(Math.floor(days) > 1) {
                     s = 's'
                 }
-                return Math.floor(days) +'days' + s
+                return Math.floor(days) +'day' + s
             }
     }
         %>
@@ -57,7 +52,7 @@
             <div class="post-container">
                 <h2> <%= el.title%></h2>
                 <div class="post-image">
-                    <img src="<%=el.imageUrl%>">
+                    <img class="post-image" src="<%=el.imageUrl%>">
                 </div>
                 <p> <%= relativeTime(el.postDate) %></p>
             </div>
