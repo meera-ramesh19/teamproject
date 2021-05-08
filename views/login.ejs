@@ -11,7 +11,7 @@
 </head>
 
 <body>
-    <div class="container">
+    <div class="container-fluid">
         <header>
             <%- include('partials/header') -%>
         </header>
@@ -21,27 +21,28 @@
             </div>
             <div>
                 <% if (locals.messages.errors) { %>
-                    <% messages.errors.forEach( el => { %>
+                    <% messages.errors.forEach( el=> { %>
                         <div class="alert alert-danger">
                             <%= el.msg %>
                         </div>
-                        <% }) %>
-                            <% } %>
-                                <% if (locals.messages.info) { %>
-                                    <% messages.info.forEach( el => { %>
-                                        <div class="alert alert-danger">
-                                            <%= el.msg %>
-                                        </div>
-                                        <% }) %>
-                                            <% } %>
-                                                <form action="/login" method="POST">
-                                                    <input type="email" name="email" placeholder="Email">
-                                                    <input type="password" name="password" placeholder="Password">
-                                                    <input type="submit">
-                                                </form>
-                                                <a href="/auth/login"><img src="./images/ms-symbollockup_signin_light_short.png"></a>
-
-                                                <p style="margin-top: 10px">If you don't have an account, <a href="/signup">Sign Up</a></p>
+                    <% }) %>
+                <% } %>
+                
+                <% if (locals.messages.info) { %>
+                    <% messages.info.forEach( el=> { %>
+                        <div class="alert alert-danger">
+                            <%= el.msg %>
+                        </div>
+                    <% }) %>
+                <% } %>
+                <form action="/login" method="POST">
+                    <input type="email" name="email" placeholder="Email" class="form-control">
+                    <input type="password" name="password" placeholder="Password" class="form-control">
+                    <input type="submit" class="btn btn-dark">
+                </form>
+                <a href="/auth/login">
+                    <img src="./images/ms-symbollockup_signin_light_short.png">
+                </a>
             </div>
         </div>
     </div>
