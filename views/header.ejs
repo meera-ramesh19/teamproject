@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Partials</title>
+    <style>
+        header {
+            background-color: #ace1af;
+            text-align: center;
+            padding: 10px 0px;
+            max-width: 50%;
+            margin: 0 auto;
+        }
+        
+        header h1 {
+            margin: 0px;
+            font-size: 26px;
+            color: #000;
+            font-weight: 1000;
+            font-family: "Acme", sans-serif;
+        }
+        
+        h1 span {
+            font-weight: 400;
+        }
+        
+        body {
+            font-family: "Open Sans", arial;
+            color: #fff;
+            margin: 0;
+            background: #DBF1FF;
+        }
+        
+        .flex {
+            display: flex;
+        }
+        
+        nav a {
+            text-decoration: none;
+            color: BLACK;
+            font-size: 16px;
+            display: block;
+        }
+        
+        nav {
+            margin-top: 15px;
+            background: #BFD1FD;
+            max-height: 100%;
+            width: 150px;
+            border-radius: 5px;
+            margin-left: 25%;
+        }
+        
+        .fas {
+            position: relative;
+            top: 12px;
+            width: 70px;
+            height: 36px;
+            text-align: center;
+            font-size: 20px;
+        }
+        
+        nav span {
+            position: relative;
+            top: 12px;
+        }
+        
+        .logo {
+            position: relative;
+            top: 0px;
+            padding: 1px;
+            background-color: #BFD1FD;
+            color: #07145d;
+            font-family: "Big Shoulders Display", cursive;
+            text-align: center;
+            line-height: 0.8;
+        }
+        
+        .logo p {
+            color: #000;
+        }
+        
+        nav a:hover {
+            background-color: #D1BFFD;
+            /*  #FFFFDB  */
+        }
+    </style>
+    <link rel="stylesheet" type="text/css">
+    <script src="https://kit.fontawesome.com/46b13243e4.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <header>
+        <h1>Travel app</h1>
+        <h3></h3>
+    </header>
+    <div class="flex">
+        <nav class="flex">
+            <!--       <a class="logo" href="#"> -->
+
+            <!--       </a> -->
+            <a href="#">
+                <i class="fas fa-home fa-lg"></i>
+                <a href="/post">Home</a>
+            </a>
+
+            <a href="#">
+                <i class="fas fa-rss fa-lg"></i>
+
+                <a href="/feed">Feed</a>
+            </a>
+
+            <a href="#">
+                <i class="fas fa-sign-out-alt fa-lg"></i>
+
+                <a href="/logout">Logout</a>
+            </a>
+        </nav>
+    </div>
+</body>
+
+</html> 
