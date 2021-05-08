@@ -4,11 +4,7 @@ const User = require('../models/User')
 module.exports = {
     getPosts: async(req, res) => {
         try {
-<<<<<<< HEAD
-            const postItems = await Post.find().sort({ postDate: "desc" }).lean();
-=======
             const postItems = await Post.find().sort({ postDate: "desc" }).lean()
->>>>>>> upstream/main
             res.render('feed.ejs', { posts: postItems, user: req.user })
         } catch (err) {
             console.log(err)
