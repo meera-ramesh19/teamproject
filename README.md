@@ -47,9 +47,9 @@ cloudinary, connect-mongo, dotenv, ejs, express, express flash, express-session,
  Have fun testing and improving it! 😎
 
 # Team
-. Cgyee
-. Meera Ramesh
-. Yolanda Haynes
-. Dyarawilliams
-. Jaredarnold3
-. Kris koeh
+- Cgyee
+- Meera Ramesh
+- Yolanda Haynes
+- Dyarawilliams
+- Jaredarnold3
+- Kris koeh
