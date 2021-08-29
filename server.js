@@ -13,6 +13,7 @@ const mainRoutes = require('./routes/main')
 const postRoutes = require('./routes/post')
 const feedRoutes = require('./routes/feed')
 var PORT = process.env.PORT || 5000
+
 require('dotenv').config({ path: './config/.env' })
 
 // Passport config
