@@ -4,7 +4,7 @@
   "description": "Our Travel App ✈️ is built using the MVC Architecture, we have also implemented \"authorization\" so folx can sign up, customize & personalize the app",
   "main": "index.js",
   "engines": {
-    "node": "14.x"
+    "node": "14.17.5"
   },
   "scripts": {
     "start": "node server.js",

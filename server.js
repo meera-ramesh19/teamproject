@@ -12,7 +12,7 @@ const mainRoutes = require('./routes/main')
     // const todoRoutes = require('./routes/todos')
 const postRoutes = require('./routes/post')
 const feedRoutes = require('./routes/feed')
-var PORT = process.env.PORT || 5000
+
 
 require('dotenv').config({ path: './config/.env' })
 
@@ -47,6 +47,6 @@ app.use('/auth', authRoutes)
 app.use('/post', postRoutes)
 app.use('/feed', feedRoutes)
 
-app.listen(PORT, () => {
+app.listen(process.env.PORT || 5000, () => {
     console.log('Server is running, you better catch it! art http://localhost:5000')
 })
