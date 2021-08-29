@@ -1,6 +1,6 @@
 # Introduction
 
-Our Travel App ✈️ is built using the MVC Architecture, we have also implemented "authorization" so folx can sign up, customize & personalize the app 
+Our Travel App ✈️ is built using the MVC Architecture, we have also implemented "authorization" so folx can sign up, customize & personalize the app to their preferences
 
 ---
 
