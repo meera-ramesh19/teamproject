@@ -1,8 +1,15 @@
 # Introduction
 
 Our Travel App ✈️ is built using the MVC Architecture, we have also implemented "authorization" so folx can sign up, customize & personalize the app to their preferences
+
 ---
-<img src='travelapplogin' alt="pics of travel memories"/>
+
+<img src='travelapplogin.png' alt="pics of travel memories"/>
+
+---
+
+<img src='travel-app.png' alt="pics of travel memories"/>
+
 ---
 
 > Be sure to add that lovely star 😀 and fork it for your own copy
