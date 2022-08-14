@@ -4,7 +4,7 @@ Our Travel App ✈️ is built using the MVC Architecture, we have also implemen
 
 ---
 
-<img src='travelapp.png' alt="pics of travel memories"/>
+<img src='travelapp.png' alt='pics of traveks'/>
 
 ---
 
